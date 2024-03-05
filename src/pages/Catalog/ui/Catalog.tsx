@@ -1,8 +1,15 @@
 import React from 'react'
+import { IntroForPages } from '../../../shared/ui/IntroForPages'
+import { ShopSettings } from '../../../widgets/shopSettings'
+import { Products } from '../../../widgets/Products'
 
 const Catalog = () => {
   return (
-    <div>Catalog</div>
+    <div>
+      <IntroForPages pageName='Shop'/>
+      <ShopSettings/>
+      <Products/>
+    </div>
   )
 }
 

@@ -1,0 +1,13 @@
+.IntroFPagesBg{
+    background-image: url('../image/Intro.svg');
+    height: 300px;
+    background-repeat:no-repeat;
+    background-position: top center;
+    position: relative;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.IntroTitle{
+    font-size: 2vw;
+}
