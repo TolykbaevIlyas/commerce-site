@@ -1,0 +1,27 @@
+.ModalWrapper{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.ModalTitle{
+    font-size: 1vw;
+}
+
+.ModalInner{
+    width: 30vw;
+    background-color:rgb(255, 255, 255);
+    position: absolute;
+    right: 0;
+    animation-name:ModalAnim;
+    animation-duration: 200ms;
+}
+
+@keyframes ModalAnim{
+    0%{
+        right: -30vw;
+    }
+    100%{
+        right: 0;
+    }
+}

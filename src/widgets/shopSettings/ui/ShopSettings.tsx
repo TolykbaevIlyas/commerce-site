@@ -1,10 +1,10 @@
-import { Button } from '@/shared/ui/Button'
+
 import React from 'react'
-import Image from 'next/image'
 import img1 from '../assets/image/Settings.svg'
 import img2 from '../assets/image/SettingsIcon2.svg'
 import img3 from '../assets/image/SettingsIcon1.svg'
-import { Input } from '@/shared/ui/Input'
+import { Button } from '../../../shared/ui/Button'
+import { Input } from '../../../shared/ui/Input'
 
 const ShopSettings = () => {
   return (
@@ -12,13 +12,13 @@ const ShopSettings = () => {
         <div className='flex gap-10 items-center text-center '>
             <div className='flex gap-5 items-center text-center border-r-2 border-black pr-10'>
               <Button variant='2' className='flex gap-2 items-center text-center'> 
-                <Image src={img1} alt={"options"}/>
+                <img src={img1} alt={"options"}/>
                 <p>Filter</p></Button>
               <Button variant='2'>
-                <Image src={img2} alt={"view"}/>  
+                <img src={img2} alt={"view"}/>  
               </Button> 
               <Button variant='2'>
-                <Image src={img3} alt={"view"}/>  
+                <img src={img3} alt={"view"}/>  
               </Button> 
             </div>
             <div>

@@ -6,10 +6,10 @@ import user from '../assets/img/User.svg'
 import search from '../assets/img/Search.svg'
 import favourite from '../assets/img/Favourite.svg'
 import cart from '../assets/img/Cart.svg'
-import { Button } from '@/shared/ui/Button'
 import s from '../assets/styles/style.module.css'
-import { ShoppingModal } from '@/features/ShoppingModal'
-import { AuthModal } from '@/features/AuthModal'
+import { Button } from '../../../shared/ui/Button'
+import { ShoppingModal } from '../../../features/ShoppingModal'
+import { AuthModal } from '../../../features/AuthModal'
 
 
 const Header = () => {
