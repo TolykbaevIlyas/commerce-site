@@ -17,7 +17,7 @@ const ModalProductCard = ({image, title, price}:IModalProductCard) => {
           </div>
         </div>
         <div className={`${s.Cancel} flex cursor-pointer`}>
-            <Button onClick={()=>setCount(count + 1)} variant='1'>Hello</Button>
+            <Button onClick={()=>setCount(count + 1)} variant='2'>+</Button>
             <img alt="Cancel" src={cancel} width={20}/>
         </div>
     </div>
