@@ -1,16 +1,16 @@
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Input } from '../../../shared/ui/Input';
 import { Button } from '../../../shared/ui/Button';
 
 interface ILogin {
-    change: () => void;
+    change: any;
     changeStatus: boolean;
 }
 
 const Login = ({change,changeStatus}:ILogin) => {
-    const [login, setLogin] = useState();
-    const [register, setRegister] = useState();
+    const [login, setLogin] = useState<string>("");
+    const [register, setRegister] = useState<string>("");
 
   return (
     <div className='flex flex-col border-t-2 border-grey bg'>

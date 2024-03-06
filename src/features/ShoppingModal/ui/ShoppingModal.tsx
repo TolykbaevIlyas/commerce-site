@@ -1,4 +1,3 @@
-import React from 'react'
 import s from '../assets/css/style.module.css'
 import { IShoppingModal } from '../types'
 import cancel from '../assets/img/Cancel.svg'

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import logo from '../assets/img/Logo.svg'
 import user from '../assets/img/User.svg'
 import search from '../assets/img/Search.svg'

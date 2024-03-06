@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import { IButton } from '../types'
 import s from './assets/style/style.module.css'
 

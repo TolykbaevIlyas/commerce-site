@@ -1,5 +1,3 @@
-
-import React from 'react'
 import img1 from '../assets/image/Settings.svg'
 import img2 from '../assets/image/SettingsIcon2.svg'
 import img3 from '../assets/image/SettingsIcon1.svg'

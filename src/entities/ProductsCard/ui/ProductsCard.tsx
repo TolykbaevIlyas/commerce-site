@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { IProductCard } from '../types'
 import s from '../assets/css/style.module.css'
 import { Button } from '../../../shared/ui/Button'

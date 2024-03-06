@@ -1,5 +1,3 @@
-import React from 'react'
-import s from '../assets/css/style.module.css'
 import img1 from '../assets/img/Product1.svg'
 import img2 from '../assets/img/Product2.svg'
 import img3 from '../assets/img/Product3.svg'

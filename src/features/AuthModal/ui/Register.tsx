@@ -1,10 +1,10 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Input } from '../../../shared/ui/Input';
 import { Button } from '../../../shared/ui/Button';
 
 interface IRegister {
-    change:() => any;
+    change:any;
     changeStatus: boolean;
 }
 
@@ -30,7 +30,7 @@ const Register = ({change,changeStatus}:IRegister) => {
         {login.length <= 3 ? <div>login Less than 3</div>:null}
         {name.length <= 3 ? <div> name Less than 3</div>:null}
         {password.length <= 3 ? <div>pass Less than 3</div>:null}
-        <Button variant='2' className='mt-5' onClick={()=> change(h => !h)}>Register/Login</Button>
+        <Button variant='2' className='mt-5' onClick={()=> change(!changeStatus)}>Register/Login</Button>
     </div>
   )
 }

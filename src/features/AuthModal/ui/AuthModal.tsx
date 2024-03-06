@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ILoginModal } from '../types';
 import s from '../assets/css/style.module.css';
 import cancel from '../assets/img/Cancel.svg'

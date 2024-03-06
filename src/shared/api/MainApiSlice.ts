@@ -1,4 +1,3 @@
-import { ThunkDispatch } from '@reduxjs/toolkit';
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import md5 from 'md5'
 
@@ -13,7 +12,7 @@ export const mainApi = createApi({
     tagTypes: ['products'],
     baseQuery: fetchBaseQuery({
         baseUrl:"http://api.valantis.store:40000",
-        prepareHeaders: (headers, { getState }) => {
+        prepareHeaders: (headers, {}) => {
           headers.set('X-Auth', authorizationString)
           return headers 
         }

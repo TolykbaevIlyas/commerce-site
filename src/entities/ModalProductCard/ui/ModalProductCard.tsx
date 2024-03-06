@@ -1,8 +1,9 @@
 'use client'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { IModalProductCard } from '../types'
 import cancel from '../assets/img/delete.svg'
 import s from '../assets/styles/style.module.css'
+import { Button } from '../../../shared/ui/Button'
 
 const ModalProductCard = ({image, title, price}:IModalProductCard) => {
   const[count, setCount] = useState(1);
@@ -16,6 +17,7 @@ const ModalProductCard = ({image, title, price}:IModalProductCard) => {
           </div>
         </div>
         <div className={`${s.Cancel} flex cursor-pointer`}>
+            <Button onClick={()=>setCount(count + 1)} variant='1'>Hello</Button>
             <img alt="Cancel" src={cancel} width={20}/>
         </div>
     </div>

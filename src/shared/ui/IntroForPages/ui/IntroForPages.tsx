@@ -1,4 +1,3 @@
-import React from 'react'
 import s from '../assets/css/style.module.css'
 import { IIntroForPages } from '../types'
 
