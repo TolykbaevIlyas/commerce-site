@@ -1,9 +1,6 @@
 import { mainApi } from './../../api/MainApiSlice';
-
-
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { ProductApi } from '../../../widgets/Products/lib/api/getProductTemplateApi';
 
 export const store = configureStore ({
   reducer:{

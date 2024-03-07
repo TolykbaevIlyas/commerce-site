@@ -5,7 +5,7 @@ import { Button } from '../../../shared/ui/Button'
 import { Input } from '../../../shared/ui/Input'
 
 interface IShopSettings{
-  show: number;
+  show: string;
   setShow:(e:string) => void;
 }
 

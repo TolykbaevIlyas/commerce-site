@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useGetAllProductQuery, useGetProductsMutation } from '../../../shared/api/MainApiSlice';
 
 const Catalog = () => {
-  const [show, setShow] = useState(16);
+  const [show, setShow] = useState('16');
   const {error, isLoading,data} = useGetAllProductQuery({page: 2});
   const [getProductTemplate,result] = useGetProductsMutation();
   let pageCount = 0;
@@ -26,7 +26,7 @@ const Catalog = () => {
   return (
     <div>
       <IntroForPages pageName='Shop'/>
-      <ShopSettings show={show} setShow={() => setShow()}/>
+      <ShopSettings show={show} setShow={() => setShow}/>
       <Products pageCount={pageCount}/>
     </div>
   )
