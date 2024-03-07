@@ -7,7 +7,7 @@ const data = `${password}_${timestamp}`;
 
 const authorizationString = md5(data);
 
-export const mainApi = createApi({
+export const ProductApi = createApi({
     reducerPath: "productsApi",
     tagTypes: ['products'],
     baseQuery: fetchBaseQuery({
@@ -18,7 +18,7 @@ export const mainApi = createApi({
         }
       }),
     endpoints:(builder) => ({
-        getAllProduct: builder.query({
+        getProductTemplates: builder.query({
           query:()=>({
             url: '/',
             method:'POST',
@@ -27,7 +27,7 @@ export const mainApi = createApi({
             }
           })
         }),
-        getProducts: builder.mutation({
+        getProductTemplate: builder.mutation({
           query:({limit = 16, page = 1})=>({
             url: '/',
             method:'POST',
@@ -40,19 +40,9 @@ export const mainApi = createApi({
             }
           })
         }),
-        getProductsObj: builder.mutation({
-          query:({})=>({
-            url: '/',
-            method:'POST',
-            body: {
-              action: "get_items",
-              params: {ids: ["1789ecf3-f81c-4f49-ada2-83804dcc74b0"]}
-          }
-          })
-        }),
     }),
 });
 
 
-export default mainApi.reducer
-export const {useGetProductsMutation,useGetAllProductQuery} = mainApi;
+export default ProductApi.reducer
+export const {useGetProductTemplateMutation,useGetProductTemplatesQuery} = ProductApi;

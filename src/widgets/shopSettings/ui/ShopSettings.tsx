@@ -4,7 +4,12 @@ import img3 from '../assets/image/SettingsIcon1.svg'
 import { Button } from '../../../shared/ui/Button'
 import { Input } from '../../../shared/ui/Input'
 
-const ShopSettings = () => {
+interface IShopSettings{
+  show: number;
+  setShow:(e:string) => void;
+}
+
+const ShopSettings = ({show, setShow}:IShopSettings) => {
   return (
     <div className='flex justify-between items-center text-center px-28 py-5 bg-primary4'>
         <div className='flex gap-10 items-center text-center '>
@@ -20,14 +25,14 @@ const ShopSettings = () => {
               </Button> 
             </div>
             <div>
-              <p>Showing 1-16 of 32 results</p>
+              <p>Showing 1-{show} of 32 results</p>
           </div>
         </div>
         <div className='flex gap-32 items-center text-center'>
           <div className='flex items-center text-center gap-10'>
             <div className='flex gap-3 items-center text-center'>
               <p>Show</p>
-              <Input placeholder='16' className='w-10 py-2 px-2'/>
+              <Input placeholder='16' value={show} onChange={(e) => setShow(e)} className='w-10 py-2 px-2'/>
             </div>
             <div className='flex gap-3 items-center text-center'>
               <p>Short by</p>
