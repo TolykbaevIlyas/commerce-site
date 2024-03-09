@@ -12,10 +12,11 @@ export const mainApi = createApi({
     tagTypes: ['products'],
     baseQuery: fetchBaseQuery({
         baseUrl:"http://api.valantis.store:40000",
-        prepareHeaders: (headers, { }) => {
-          headers.set('X-Auth', authorizationString)
+        prepareHeaders: (headers) => {
+          headers.set('X-Auth', authorizationString),
+          headers.set("Referrer-Policy", "unsafe_url")
           return headers 
-        }
+        },
       }),
     endpoints:(builder) => ({
         getAllProduct: builder.query({
