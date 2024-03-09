@@ -25,7 +25,7 @@ const Catalog = () => {
         result.isError ? <>Error</> :
         result.isLoading ? <>isLoad</> :
         result.isSuccess? <Products pageCount={pageCount} productsList={result.data.result}/>:
-        "Null"
+        "Please wait"
       }
 
     </div>
