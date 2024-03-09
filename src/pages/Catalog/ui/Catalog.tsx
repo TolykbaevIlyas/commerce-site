@@ -2,32 +2,32 @@ import { IntroForPages } from '../../../shared/ui/IntroForPages'
 import { ShopSettings } from '../../../widgets/shopSettings'
 import { Products } from '../../../widgets/Products'
 import { useEffect, useState } from 'react';
-import { useGetAllProductQuery, useGetProductsMutation } from '../../../shared/api/MainApiSlice';
+import {useGetProductsObjMutation } from '../../../shared/api/MainApiSlice';
+import { useProducts } from '../../../features/useProducts/useProducts';
+
 
 const Catalog = () => {
   const [show, setShow] = useState('16');
-  const {error, isLoading,data} = useGetAllProductQuery({page: 2});
-  const [getProductTemplate,result] = useGetProductsMutation();
-  let pageCount = 0;
-  console.log(
-    error? "Error" :
-    isLoading? "Loading" :
-    pageCount = data.result.length
-    );
+  const [getProductsObj,result] = useGetProductsObjMutation()
+  const [err,isLoad,pageCount,res] = useProducts();
 
   useEffect(()=>{
-    getProductTemplate({page:1});
-  },[])
-  console.log(result)
+    err ? "Error" : isLoad ? "Loading" : getProductsObj(res)
+  },[res])
 
-  //console.log("show" + show)
+  console.log(err ? "Error" : isLoad ? "Load" : res)
 
-  
   return (
     <div>
       <IntroForPages pageName='Shop'/>
       <ShopSettings show={show} setShow={() => setShow}/>
-      <Products pageCount={pageCount}/>
+      {
+        result.isError ? <>Error</> :
+        result.isLoading ? <>isLoad</> :
+        result.isSuccess? <Products pageCount={pageCount} productsList={result.data.result}/>:
+        "Null"
+      }
+
     </div>
   )
 }

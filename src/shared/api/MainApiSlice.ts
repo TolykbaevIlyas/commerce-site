@@ -41,12 +41,12 @@ export const mainApi = createApi({
           })
         }),
         getProductsObj: builder.mutation({
-          query:({})=>({
+          query:(prod)=>({
             url: '/',
             method:'POST',
             body: {
               action: "get_items",
-              params: {ids: ["1789ecf3-f81c-4f49-ada2-83804dcc74b0"]}
+              params: {ids: prod}
           }
           })
         }),
@@ -55,4 +55,4 @@ export const mainApi = createApi({
 
 
 export default mainApi.reducer
-export const {useGetProductsMutation,useGetAllProductQuery} = mainApi;
+export const {useGetProductsMutation,useGetAllProductQuery,useGetProductsObjMutation} = mainApi;

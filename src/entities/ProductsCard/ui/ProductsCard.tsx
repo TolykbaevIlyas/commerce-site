@@ -4,7 +4,7 @@ import { IProductCard } from '../types'
 import s from '../assets/css/style.module.css'
 import { Button } from '../../../shared/ui/Button'
 
-const ProductsCard = ({name,price,img,shortDescription}:IProductCard) => {
+const ProductsCard = ({product,price,shortDescription,img}:IProductCard) => {
   const [isMouseOver, setIsMouseOver] = useState(false)
 
   const handleMouseOver = () => {
@@ -17,11 +17,11 @@ const ProductsCard = ({name,price,img,shortDescription}:IProductCard) => {
 
   return (
     <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className='cursor-pointer group-hover:bg-slate-300'>
-        <img src={img} alt={"ProductImg"} width={300}/>
+        <img src={img} alt={"ProductImg"} width={600}/>
         <div className='flex flex-col bg-gray-100 px-5 py-2 gap-2 '>
-            <h4 className={`font-bold ${s.Title}`}>{name}</h4>
+            <h4 className={`font-bold ${s.Title}`}>{product}</h4>
             <p className={`font-extralight ${s.Description}`}>{shortDescription}</p>
-            <p className={`font-bold ${s.price}`}>{price} $</p>
+            <p className={`font-bold ${s.price}`}>{price} руб</p>
         </div>
         {isMouseOver ? 
         <div className=' flex justify-center items-center z-10 w-full h-full relative -top-full bg-black/40'> 

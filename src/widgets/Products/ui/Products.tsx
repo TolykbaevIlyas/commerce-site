@@ -6,9 +6,10 @@ import { ProductsCard } from '../../../entities/ProductsCard'
 
 interface IProducts{
     pageCount: number;
+    productsList: any;
 }
 
-const Products = ({pageCount}:IProducts) => {
+const Products = ({pageCount,productsList}:IProducts) => {
     const product = [
         {id: 1, name: 'Syltherine', shortDesc:"Stylish cafe chair", price: 2.500, img:img1},
         {id: 2, name: 'Leviosa', shortDesc:"Stylish cafe chair", price: 2.500, img:img2},
@@ -29,16 +30,17 @@ const Products = ({pageCount}:IProducts) => {
         pages.push(i);
     }
 
+    console.log(productsList)
   return (
     <div>
         <div className='flex justify-around gap-10 flex-wrap pt-5 px-36'>
-            {product.map((p)=> <ProductsCard key={p.id} name={p.name} price={p.price} img={p.img} shortDescription={p.shortDesc}/>)}
+            {productsList.map((p:any)=><ProductsCard key={p.id} product={p.product} price={p.price} shortDescription={product[1].shortDesc} img={img1}/>)}
         </div>
         <div className='flex justify-center gap-5 mt-10 mx-56'>
             <Button className=' px-5 py-3 rounded-xl hover:bg-primary hover:text-white font-light' variant='6'>Previous</Button>
             <div className='flex flex-wrap gap-5'>
                 {
-                    pages.map(()=><Button className=' px-5 py-3 rounded-xl hover:bg-primary hover:text-white' variant='6'>1</Button>)
+                    pages.map((n)=><Button key={n} className=' px-5 py-3 rounded-xl hover:bg-primary hover:text-white' variant='6'>{n}</Button>)
                 }
             </div>
             <Button className=' px-5 py-3 rounded-xl hover:bg-primary hover:text-white font-light' variant='6'>NEXT</Button>

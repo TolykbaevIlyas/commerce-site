@@ -1,6 +1,6 @@
 export interface IProductCard{
-    name: string;
+    product:string;
+    price:number;
     img: any;
     shortDescription: string;
-    price: number;
 }
