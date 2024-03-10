@@ -1,0 +1,9 @@
+.Title {
+    font-size: 2vw;
+}
+
+.Products{
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+}

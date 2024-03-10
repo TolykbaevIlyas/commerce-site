@@ -1,0 +1,54 @@
+.Intro{
+    background-image:url('../img/IntroBg.svg');
+    background-repeat:no-repeat;
+    background-position: top center;
+    position: relative;
+	-webkit-background-size: cover;
+	background-size: cover;
+    padding-top: 200px;
+    justify-content: right;
+}
+
+.IntroBlock{
+    float: right;
+    margin-right: 40px;
+    width: 50vw;
+}
+
+.IntroText{
+    color:#B88E2F;
+    width: 25vw;
+    font-size: 3vw;
+}
+
+.IntroDesc{
+    font-size: 0.8vw;
+}
+
+.Button:hover{
+    animation: ButtonAnm 2.6s ease
+
+}
+
+@keyframes ButtonAnm{
+    0%{
+    }
+    25%{
+        border-top: 1px solid black;
+    }
+    50%{
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+    75%{
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    100%{
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        border-left: 1px solid black;
+    }
+}
