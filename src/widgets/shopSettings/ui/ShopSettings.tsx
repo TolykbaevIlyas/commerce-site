@@ -6,10 +6,11 @@ import { Input } from '../../../shared/ui/Input'
 
 interface IShopSettings{
   show: string;
-  setShow:(e:string) => void;
+  setShow:any;
+  currentPage: number;
 }
 
-const ShopSettings = ({show, setShow}:IShopSettings) => {
+const ShopSettings = ({show, setShow,currentPage}:IShopSettings) => {
   return (
     <div className='flex justify-between items-center text-center px-28 py-5 bg-primary4'>
         <div className='flex gap-10 items-center text-center '>
@@ -25,7 +26,10 @@ const ShopSettings = ({show, setShow}:IShopSettings) => {
               </Button> 
             </div>
             <div>
-              <p>Showing 1-{show} of 32 results</p>
+              {
+                currentPage ==1 ? <p>Showing {currentPage}-{parseInt(show) * currentPage} of {8000} results</p>:
+                <p>Showing {parseInt(show) * (currentPage - 1)}-{parseInt(show) * currentPage} of {8000} results</p>
+              }
           </div>
         </div>
         <div className='flex gap-32 items-center text-center'>

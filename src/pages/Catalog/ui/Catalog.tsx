@@ -7,9 +7,10 @@ import { useProducts } from '../../../features/useProducts/useProducts';
 
 
 const Catalog = () => {
-  const [show, setShow] = useState('16');
+  const [show, setShow] = useState('50');
+  const [currentPage, setCurrentPage] = useState(1);
   const [getProductsObj,result] = useGetProductsObjMutation()
-  const [err,isLoad,pageCount,res] = useProducts();
+  const [err,isLoad,pageCount,res] = useProducts({page:currentPage, limit:parseInt(show)});
 
   useEffect(()=>{
     err ? "Error" : isLoad ? "Loading" : getProductsObj(res)
@@ -20,12 +21,12 @@ const Catalog = () => {
   return (
     <div>
       <IntroForPages pageName='Shop'/>
-      <ShopSettings show={show} setShow={() => setShow}/>
+      <ShopSettings show={show} setShow={setShow} currentPage={currentPage}/>
       {
         result.isError ? <>Error</> :
         result.isLoading ? <>isLoad</> :
-        result.isSuccess? <Products pageCount={pageCount} productsList={result.data.result}/>:
-        "Please wait"
+        result.isSuccess? <Products pageCount={pageCount} productsList={result.data.result} setCurrentPage={setCurrentPage} currentPage={currentPage}/>:
+        "Please wait..."
       }
 
     </div>

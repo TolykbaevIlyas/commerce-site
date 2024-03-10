@@ -29,7 +29,7 @@ export const mainApi = createApi({
           })
         }),
         getProducts: builder.mutation({
-          query:({limit = 16, page = 1})=>({
+          query:({limit = 50, page = 1})=>({
             url: '/',
             method:'POST',
             body: {
@@ -39,7 +39,8 @@ export const mainApi = createApi({
                     limit: limit
                   }
             }
-          })
+          }),
+          invalidatesTags: [{type: 'products', id: 'LIST'}]
         }),
         getProductsObj: builder.mutation({
           query:(prod)=>({
@@ -49,7 +50,8 @@ export const mainApi = createApi({
               action: "get_items",
               params: {ids: prod}
           }
-          })
+          }),
+          invalidatesTags: [{type: 'products', id: 'LIST'}]
         }),
     }),
 });

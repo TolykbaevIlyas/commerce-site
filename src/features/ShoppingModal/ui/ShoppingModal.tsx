@@ -1,15 +1,14 @@
 import s from '../assets/css/style.module.css'
 import { IShoppingModal } from '../types'
 import cancel from '../assets/img/Cancel.svg'
-import ProdImg from '../assets/img/ProductImg.svg'
 import { Button } from '../../../shared/ui/Button'
 import { ModalProductCard } from '../../../entities/ModalProductCard'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../../shared/Redux/store/store'
 
 
 const ShoppingModal = ({click,setClick}: IShoppingModal) => {
-
-  const Products = [{id:1, img: ProdImg, title: 'Book', price: 100},{id:2, img: ProdImg, title: 'Book', price: 100},{id:3, img: ProdImg, title: 'Book', price: 100}]
-
+  const Cart = useSelector((state: RootState) => state.cartReducer);
   return (
     <div className={`${s.ModalWrapper} bg-black/40 z-20 duration-75`}>
       <div className={`${s.ModalInner} px-10 py-5`}>
@@ -20,7 +19,7 @@ const ShoppingModal = ({click,setClick}: IShoppingModal) => {
           </Button>
         </div>
         <div className='mt-5 border-t-2 border-grey bg'>
-          {Products.map((prod)=> <ModalProductCard key={prod.id} image={prod.img} title={prod.title} price={prod.price}/>)}
+          {Cart.Cart.map((prod)=> <ModalProductCard image={prod?.img} title={prod?.product} price={prod?.price}/>)}
         </div>
         <div className='flex mt-10 justify-around'>
           <p className='font-bold'>Subtotal</p>

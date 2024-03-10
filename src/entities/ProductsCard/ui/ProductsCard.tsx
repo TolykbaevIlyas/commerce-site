@@ -3,9 +3,12 @@ import { useState } from 'react'
 import { IProductCard } from '../types'
 import s from '../assets/css/style.module.css'
 import { Button } from '../../../shared/ui/Button'
+import { useDispatch } from 'react-redux'
+import { addCart } from '../../../features/ShoppingModal/reduxSlice/AddToCart'
 
 const ProductsCard = ({product,price,shortDescription,img}:IProductCard) => {
-  const [isMouseOver, setIsMouseOver] = useState(false)
+  const [isMouseOver, setIsMouseOver] = useState(false);
+  const dispatch = useDispatch();
 
   const handleMouseOver = () => {
     setIsMouseOver(true);
@@ -25,7 +28,7 @@ const ProductsCard = ({product,price,shortDescription,img}:IProductCard) => {
         </div>
         {isMouseOver ? 
         <div className=' flex justify-center items-center z-10 w-full h-full relative -top-full bg-black/40'> 
-          <Button variant='5' className='absolute hover:bg-primary hover:text-white duration-100'>
+          <Button variant='5' className='absolute hover:bg-primary hover:text-white duration-100' onClick={() => dispatch(addCart({product: product, price: price, shortDescription:shortDescription, img:img}))}>
             Add to Cart
           </Button> 
           <div className='flex absolute mt-24 gap-10'>
